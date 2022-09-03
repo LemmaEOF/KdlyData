@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "gay.lemmaeof.kdlydata.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinJsonDataLoader",
+    "MultiPackResourceManagerAccessor",
+    "NamespaceResourceManagerAccessor",
+    "ReloadableResourceManagerAccessor"
+  ]
+}

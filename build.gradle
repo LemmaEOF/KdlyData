@@ -7,12 +7,16 @@ archivesBaseName = "${project.archives_base_name}"
 group = "${project.maven_group}"
 version = "${project.mod_version}+${project.minecraft_version}"
 
+loom {
+	accessWidenerPath = file("src/main/resources/kdlydata.accesswidener")
+}
 
 repositories {
 	maven { url "https://maven.oroarmor.com" } // OroArmor maven - home of QM over intermediary
 	maven { url "https://server.bbkr.space/artifactory/libs-release" } // Cotton maven - home of Cotton projects
 	maven { url "https://repo.sleeping.town" } // Sleeping Town maven - home of Lib39
 	maven { url "https://ladysnake.jfrog.io/artifactory/mods" } // Ladysnake maven - home of Cardinal Components
+	maven { url "https://repo.unascribed.com" }
 }
 
 dependencies {
@@ -21,6 +25,8 @@ dependencies {
 	modImplementation "org.quiltmc:quilt-loader:${project.loader_version}"
 	modImplementation "org.quiltmc.quilted-fabric-api:quilted-fabric-api:${project.qfapi_version}-${project.minecraft_version}"
 	compileOnly "com.google.code.findbugs:jsr305:3.0.2"
+
+	implementation include("dev.hbeck.kdl:kdl4j:${project.kdl_version}")
 }
 
 processResources {

@@ -3,7 +3,7 @@
 # Fabric Starter
 
 
-[>> Downloads <<](https://github.com/CottonMC/FabricStarter/releases)
+[>> Downloads <<](https://github.com/LemmaEOF/KdlyData/releases)
 
 *Get set up!*
 
