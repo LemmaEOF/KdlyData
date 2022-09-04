@@ -1,2 +1,4 @@
 accessWidener	v1	named
 accessible	class	net/minecraft/resource/NamespaceResourceManager$PackEntry
+accessible	class	net/minecraft/resource/NamespaceResourceManager$ResourceEntry
+accessible	class	net/minecraft/resource/NamespaceResourceManager$ResourceEntries

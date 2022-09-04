@@ -3,9 +3,11 @@
   "package": "gay.lemmaeof.kdlydata.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinJsonDataLoader",
-    "MultiPackResourceManagerAccessor",
-    "NamespaceResourceManagerAccessor",
-    "ReloadableResourceManagerAccessor"
+    "MixinNamespaceResourceManager",
+    "MixinNamespaceResourceManager$MixinPackEntry",
+    "MixinNamespaceResourceManager$MixinResourceEntries",
+    "MixinNamespaceResourceManager$ResourceEntriesAccessor",
+    "MixinNamespaceResourceManager$ResourceEntryAccessor",
+    "NamespaceResourceManagerAccessor"
   ]
 }
