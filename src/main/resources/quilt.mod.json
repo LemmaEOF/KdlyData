@@ -8,7 +8,7 @@
       "name": "Kdly Data",
       "icon": "assets/kdlydata/icon.png",
       "description": "Write JSON data with KDL!",
-      "license": "MIT",
+      "license": "BSD-3-Clause",
       "contact": {
         "sources": "https://github.com/LemmaEOF/KdlyData"
       }
