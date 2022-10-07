@@ -50,7 +50,7 @@ java {
 }
 
 jar {
-	from("LICENSE") {
+	from("LICENSE.md") {
 		rename { "${it}_${archivesBaseName}" }
 	}
 }
@@ -63,5 +63,17 @@ publishing {
 	}
 
 	repositories {
+		if (project.hasProperty("publish-username")) {
+			maven {
+				url "https://repo-api.sleeping.town/"
+				credentials {
+					username project.hasProperty("publish-username") ? project.getProperty("publish-username") : null
+					password project.hasProperty("publish-password") ? project.getProperty("publish-password") : null
+				}
+			}
+		}
+		maven {
+			url file('build/maven').toURI().toString()
+		}
 	}
 }
