@@ -35,6 +35,10 @@ processResources {
 	filesMatching('quilt.mod.json') {
 		expand "version": version
 	}
+
+	filesMatching('fabric.mod.json') {
+		expand "version": version
+	}
 }
 
 tasks.withType(JavaCompile).configureEach {

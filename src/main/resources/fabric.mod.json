@@ -1,0 +1,20 @@
+{
+    "schemaVersion": 1,
+    "id": "kdlydata",
+    "version": "${version}",
+    "name": "Kdly Data",
+    "description": "Write JSON data with KDL!",
+    "authors": [
+        "LemmaEOF"
+    ],
+    "contact": {
+        "sources": "https://github.com/LemmaEOF/KdlyData"
+    },
+    "license": "BSD-3-Clause",
+    "icon": "assets/kdlydata/icon.png",
+    "environment": "*",
+    "mixins": [
+        "mixins.kdlydata.json"
+    ],
+    "accessWidener": "kdlydata.accesswidener"
+}

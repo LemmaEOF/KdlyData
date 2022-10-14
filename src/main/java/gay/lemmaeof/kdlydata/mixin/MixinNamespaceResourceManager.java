@@ -108,7 +108,7 @@ public abstract class MixinNamespaceResourceManager {
 
 	@Inject(method = "findResources", at = @At("HEAD"))
 	private void detectSearchingForJson(String startingPath, Predicate<Identifier> pathFilter, CallbackInfoReturnable<Map<Identifier, Resource>> info) {
-		Hooks.predicateIsJson.set(pathFilter.test(kdlydata$JSON_TEST) && pathFilter.test(kdlydata$NOT_JSON_TEST));
+		Hooks.predicateIsJson.set(pathFilter.test(kdlydata$JSON_TEST) && !pathFilter.test(kdlydata$NOT_JSON_TEST));
 	}
 
 	@Inject(method = "findResources", at = @At(value = "INVOKE", target = "net/minecraft/resource/pack/ResourcePack.findResources(Lnet/minecraft/resource/ResourceType;Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Predicate;)Ljava/util/Collection;"), locals = LocalCapture.CAPTURE_FAILEXCEPTION)
@@ -147,7 +147,7 @@ public abstract class MixinNamespaceResourceManager {
 
 	@Inject(method = "findAllResources", at = @At("HEAD"))
 	private void detectSearchingForJsonAll(String startingPath, Predicate<Identifier> pathFilter, CallbackInfoReturnable<Map<Identifier, List<Resource>>> info) {
-		Hooks.predicateIsJson.set(pathFilter.test(kdlydata$JSON_TEST) && pathFilter.test(kdlydata$NOT_JSON_TEST));
+		Hooks.predicateIsJson.set(pathFilter.test(kdlydata$JSON_TEST) && !pathFilter.test(kdlydata$NOT_JSON_TEST));
 	}
 
 	@Inject(method = "findResourcesOf", at = @At("TAIL"))
