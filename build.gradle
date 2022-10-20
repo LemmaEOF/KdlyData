@@ -23,7 +23,6 @@ dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "org.quiltmc:quilt-mappings:${project.minecraft_version}+build.${project.mappings_build}:intermediary-v2"
 	modImplementation "org.quiltmc:quilt-loader:${project.loader_version}"
-	modImplementation "org.quiltmc.quilted-fabric-api:quilted-fabric-api:${project.qfapi_version}-${project.minecraft_version}"
 	compileOnly "com.google.code.findbugs:jsr305:3.0.2"
 
 	implementation include("dev.hbeck.kdl:kdl4j:${project.kdl_version}")
