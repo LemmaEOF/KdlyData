@@ -10,20 +10,11 @@ import java.util.List;
 public class KdlProcessor {
 	public static JsonElement parseKdl(KDLDocument doc) {
 		List<KDLNode> nodes = doc.getNodes();
-		if (nodes.size() == 1) {
-			KDLNode node = nodes.get(0);
-			return switch(parseType(node)) {
-				case LITERAL -> parseLiteral(node.getArgs().get(0));
-				case OBJECT -> parseObject(node);
-				case ARRAY -> parseArray(node);
-			};
-		} else {
-			return switch(parseType(doc.getNodes())) {
-				case LITERAL -> throw new IllegalStateException("unreachable");
-				case OBJECT -> parseObject(nodes);
-				case ARRAY -> parseArray(nodes);
-			};
-		}
+		return switch(parseType(nodes)) {
+			case LITERAL -> throw new IllegalStateException("unreachable");
+			case OBJECT -> parseObject(nodes);
+			case ARRAY -> parseArray(nodes);
+		};
 	}
 
 	public static JsonObject parseObject(KDLNode node) {
